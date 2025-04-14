@@ -1,0 +1,125 @@
+/* Cấu trúc cơ bản của thanh nav */
+.nav {
+    background: linear-gradient(135deg, #B0E0E6, #A8D8A5); /* Thanh nav có gradient nhẹ với màu bầu trời và cây cối */
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */
+    height: 50px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Logo */
+.nav img {
+    height: 50px;
+    width: auto;
+    margin-left: 30px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+/* Các mục */
+.nav ul li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    border-radius: 10px;
+}
+
+/* Màu chữ mặc định của mục */
+.nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Màu chữ của mục là trắng */
+    font-weight: 600;
+    padding: 14px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 10px;
+}
+
+/* Hiệu ứng khi hover vào mục */
+.nav ul li a:hover {
+    color: #3d5a48; /* Màu chữ của mục khi hover là màu của thanh nav */
+    background: linear-gradient(135deg, #A8D8A5, #B0E0E6); /* Gradient từ bầu trời và cây cối */
+    transform: translateY(-3px) scale(1.03); /* Di chuyển lên nhẹ và phóng to ít hơn */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: hoverAnimation 0.2s ease-out, glowEffect 0.3s ease-in-out;
+}
+
+/* Khi click vào mục */
+.nav ul li a.active {
+    color: white; /* Màu chữ khi click vào là trắng */
+    background: linear-gradient(135deg, #A8D8A5, #B0E0E6); /* Gradient giống thanh nav */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1); /* Giữ nguyên kích thước */
+    filter: brightness(0.95);
+    animation: pulseAnimation 0.5s ease-out; /* Thêm hiệu ứng Pulse */
+    border-radius: 10px;
+}
+
+/* Hiệu ứng animation khi hover */
+@keyframes hoverAnimation {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-3px); /* Di chuyển nhẹ và phóng to ít hơn */
+    }
+    100% {
+        transform: scale(1.03) translateY(-3px);
+    }
+}
+
+/* Hiệu ứng Pulse (Nhịp tim) khi click */
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1); /* Bắt đầu kích thước ban đầu */
+    }
+    50% {
+        transform: scale(1.1); /* Phóng to nhẹ */
+    }
+    100% {
+        transform: scale(1); /* Trở lại kích thước ban đầu */
+    }
+}
+
+/* Hiệu ứng ánh sáng (Glow) khi hover */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 8px #A8D8A5, 0 0 15px #B0E0E6; /* Ánh sáng nhẹ từ gradient */
+    }
+    50% {
+        box-shadow: 0 0 12px #A8D8A5, 0 0 20px #B0E0E6;
+    }
+    100% {
+        box-shadow: 0 0 8px #A8D8A5, 0 0 15px #B0E0E6;
+    }
+}
+
+/* Hiệu ứng khi hover vào toàn bộ thanh nav */
+.nav:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Thêm bóng đổ khi hover vào thanh nav */
+}
