@@ -1,67 +1,66 @@
 /* Mặc định */
 .cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    width: 280px;
-    height: 400px;
-    padding: 40px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #B0E0E6, #E8F4E1); /* Bầu trời pha trắng mây và cây cối nhẹ */
-    border: 1px solid #e0e0e0; /* Viền nhẹ nhàng */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bóng nhẹ, mờ */
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Thanh underline di chuyển khi hover - Màu xanh lá */
-  .card-underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #32CD32; /* Màu xanh lá */
-    transition: width 0.3s ease;
-  }
-  
-  /* Hiệu ứng khi hover vào card */
-  .card:hover {
-    background: linear-gradient(135deg, #B0E0E6, #E8F4E1); /* Gradient nhẹ, hài hòa */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Bóng nhẹ khi hover */
-    transform: scale(1.03); /* Phóng to nhẹ */
-    border-radius: 25px; /* Bo góc tròn hơn */
-  }
-  
-  /* Hiệu ứng thanh underline di chuyển khi hover */
-  .card:hover .card-underline {
-    width: 100%; /* Thanh underline mở rộng khi hover */
-  }
-  
-  /* Khi click vào card */
-  .card.clicked {
-    background: linear-gradient(135deg, #B0E0E6, #A8D8A5); /* Đổi màu gradient khi click */
-    color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Bóng nhẹ khi click */
-    transform: scale(0.98); /* Lún nhẹ khi click */
-    filter: brightness(0.98); /* Giảm độ sáng khi click */
-  }
-  
-  /* Hiệu ứng văn bản */
-  .card-content h2, .card-content p {
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .card:hover .card-content h2, .card:hover .card-content p {
-    color: #fff; /* Văn bản trắng khi hover */
-    transform: translateY(-3px); /* Di chuyển văn bản nhẹ lên */
-  }
-  
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  height: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #87CEEB 75%, #32CD32 25%); /* Bầu trời chiếm ưu thế */
+  border: 1px solid #e0e0e0; /* Viền nhẹ nhàng */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bóng nhẹ, mờ */
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Thanh underline di chuyển khi hover - Màu xanh lá */
+.card-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #32CD32; /* Màu xanh lá */
+  transition: width 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào card */
+.card:hover {
+  background: linear-gradient(135deg, #87CEEB 75%, #32CD32 25%); /* Giữ bầu trời chiếm ưu thế */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Bóng nhẹ hơn khi hover */
+  transform: scale(1.03); /* Phóng to nhẹ */
+  border-radius: 25px; /* Bo góc tròn hơn */
+}
+
+/* Hiệu ứng thanh underline di chuyển khi hover */
+.card:hover .card-underline {
+  width: 100%; /* Thanh underline mở rộng khi hover */
+}
+
+/* Khi click vào card */
+.card.clicked {
+  background: linear-gradient(135deg, #87CEEB 75%, #228B22 25%); /* Đổi màu gradient khi click */
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Bóng nhẹ khi click */
+  transform: scale(0.98); /* Lún nhẹ khi click */
+  filter: brightness(0.98); /* Giảm độ sáng khi click */
+}
+
+/* Hiệu ứng văn bản */
+.card-content h2, .card-content p {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .card-content h2, .card:hover .card-content p {
+  color: #fff; /* Văn bản trắng khi hover */
+  transform: translateY(-3px); /* Di chuyển văn bản nhẹ lên */
+}
