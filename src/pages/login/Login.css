@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 90.3vh;
+    background: url('../../images/background/background1.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+.container-panel {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    min-height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+                0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form-box {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 53%;
+    text-align: center;
+    transition: all 0.6s ease-in-out;
+    color: #fff;
+}
+
+.login-box {
+    left: -10px;
+    z-index: 2;
+}
+
+.register-box {
+    left: -30px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.wrapper.active .login-box {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.wrapper.active .register-box {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 2;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 10;
+}
+
+.wrapper.active .overlay-panel {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: linear-gradient(to right, #89c577, #6ab9aa);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.wrapper.active .overlay {
+    transform: translateX(43%);
+}
+
+.overlay-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    margin: 0 -2
+    0px;
+}
+
+.overlay-content.left {
+    transform: translateX(-20%);
+}
+
+.wrapper.active .overlay-content.left {
+    transform: translateX(0);
+}
+
+.overlay-content.right {
+    right: -40px;
+    transform: translateX(0);
+}
+
+.wrapper.active .overlay-content.right {
+    transform: translateX(20%);
+}
+
+button.ghost {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-top: 20px;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 5px;
+    color: #fff;
+    text-shadow: 
+    0 0 5px #6bff08,
+    0 0 10px #00fffc,
+    0 0 20px #b3ff10;
+    animation: neon-flicker 1.5s infinite alternate;
+    font-size: 30px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.input-box input {
+    width: 220px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+    padding-right: 35px;
+    font-size: 16px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+button {
+    background: linear-gradient(to right, #c1f5ff, #9affec);
+    color: #ffffff;
+    border: none;
+    padding: 12px 45px;
+    border-radius: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+.remember-forgot {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.register-box button {
+    margin-top: 5px;
+}
+
+.error-message {
+    color: #ff4d4d;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0);}
+    20%, 60% { transform: translateX(-5px);}
+    40%, 80% { transform: translateX(5px);}
+}
+
+.password-match {
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.password-match.match {
+    color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.password-match.mismatch {
+    color: #F44336;
+    background-color: rgba(244, 67, 54, 0.1);
+}

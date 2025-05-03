@@ -5,7 +5,7 @@ import logo from '../../images/logo/travel-logo.png';
 
 const Header = () => {
     return (
-        <nav class="nav">
+        <nav className="nav">
             <div className="logo">
                 <Link to='/'><img src={logo} alt="Logo" /></Link>
             </div>
